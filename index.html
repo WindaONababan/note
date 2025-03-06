@@ -11,19 +11,24 @@
     <link rel="stylesheet" href="css.styles.css">
     <script src="bundle.js" defer></script>
 
-    <!-- <link rel="stylesheet" href="src/css/style.css" /> -->
   </head>
   <body>
     <header>
       <h2>NOTE APP</h2>
     </header>
-    <div id="loading" style="display: none; color: white">Loading...</div>
     <main class="main_wrapper">
       <section>
         <form-note> </form-note>
         <note-list> </note-list>
       </section>
+      <div id="list-note">
+        <card-list></card-list>
+        <div class="archive-text">
+          <h2>Archive Notes</h2>
+          <card-list-archive></card-list-archive>
+        </div>
     </main>
+    </div>
     <script type="module" src="src/app.js" defer></script>
     <footer>
       <p>&copy; 2025 by Winda_o_nababan</p>

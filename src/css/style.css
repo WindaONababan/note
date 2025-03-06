@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
@@ -7,6 +8,7 @@ body {
   color: #333;
 }
 
+/* Header */
 header {
   text-align: center;
   background: linear-gradient(135deg, #f47d72, #de6262);
@@ -19,6 +21,7 @@ header {
   letter-spacing: 1px;
 }
 
+/* Section Title */
 h3 {
   text-align: center;
   color: #6a0572;
@@ -31,6 +34,7 @@ h3 {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Main Content */
 main {
   flex: 1;
   padding: 2rem;
@@ -38,6 +42,7 @@ main {
   margin: 0 auto;
 }
 
+/* Grid Layout untuk Note List */
 form-note,
 note-list {
   margin-bottom: 1.5rem;
@@ -47,14 +52,13 @@ note-list {
   padding-top: 1rem;
 }
 
+/* Note Item */
 .note-item {
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition:
-    transform 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
 }
@@ -76,34 +80,115 @@ note-list {
   color: #444;
 }
 
+/* Button Container */
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Button Styles */
+.delete-btn,
+.archive-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
 .delete-btn {
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: white;
   border: none;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
-  max-width: 110px;
 }
 
-.delete-btn:hover {
-  background: #d43f3f;
+.archive-btn {
+  background: linear-gradient(135deg, #f39c12, #f5af19);
+  color: white;
+  border: none;
+}
+
+.delete-btn:hover,
+.archive-btn:hover {
   transform: scale(1.1);
 }
 
-.delete-btn:active {
-  background: #b83232;
+.delete-btn:active,
+.archive-btn:active {
   transform: scale(0.95);
 }
 
+/* Grid Layout untuk Archive */
+card-list-archive {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Note Item di Archive */
+.note-item.archive {
+  background: #f5f5f5;
+  border-left: 5px solid #3498db;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+/* Tombol Kembalikan */
+.note-actions.archive {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.archive-text{
+ color: black;
+ width: 100%;
+}
+
+.unarchive-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.unarchive-btn:hover {
+  background: #2573a8;
+  transform: scale(1.05);
+}
+
+.unarchive-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsif: Jadi 1 kolom jika layar kecil */
+@media (max-width: 768px) {
+  card-list-archive {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Styling */
 form {
   display: grid;
   gap: 1rem;
@@ -133,6 +218,7 @@ form textarea:focus {
   outline: none;
 }
 
+/* Form Button */
 form button {
   background: linear-gradient(135deg, #6a0572, #a4508b);
   color: white;
@@ -143,9 +229,7 @@ form button {
   border-radius: 30px;
   cursor: pointer;
   letter-spacing: 1px;
-  transition:
-    background 0.3s ease,
-    transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
@@ -157,6 +241,7 @@ form button:active {
   transform: scale(0.95);
 }
 
+/* Footer */
 footer {
   text-align: center;
   background: linear-gradient(135deg, #6a0572, #a4508b);

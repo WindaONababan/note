@@ -1,14 +1,24 @@
 const API_URL = "https://notes-api.dicoding.dev/v2";
 
-async function loadNotes() {
-  loadingIndicator.style.display = "block";
-  const notes = await fetchNotes();
-  console.log("Data dari API:", notes); // 🔍 Debug isi data
+export async function fetchArchivedNotes() {
+  try {
+    console.log("Mengambil catatan yang diarsipkan dari API...");
+    const response = await fetch(`${API_URL}/notes/archived`);
+    const result = await response.json();
 
-  noteList.notes = notes;
-  loadingIndicator.style.display = "none";
+    console.log("Respons dari API (arsip):", result);
+
+    if (result.status === "success") {
+      console.log("Catatan arsip berhasil diambil:", result.data);
+      return result.data;
+    }
+
+    throw new Error("Gagal mengambil data catatan arsip.");
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
-
 
 export async function fetchNotes() {
   try {

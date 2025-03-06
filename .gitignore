@@ -1,0 +1,8 @@
+# penambahan webpack
+.webpack.common.js
+.webpack.dev.js
+.webpack.prod.js
+
+# archive nya
+card-list-archive
+note-item-archive

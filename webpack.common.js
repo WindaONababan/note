@@ -3,17 +3,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/app.js", // File utama aplikasi
+  entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  mode: "development", // Hanya deklarasikan satu kali
-
   module: {
     rules: [
       {
-        test: /\.js$/, // Untuk semua file JavaScript
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -28,23 +26,11 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./index.html", // Pastikan file ini ada di root proyek
+      template: "./index.html",
       filename: "index.html",
     }),
-    new MiniCssExtractPlugin({
-      filename: "css.styles.css", // Simpan di dist/
-    }),
+    new MiniCssExtractPlugin({ filename: "css/styles.css" }),
   ],
-
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 5500,
-    open: true, // Membuka browser otomatis saat server berjalan
-  },
 };
